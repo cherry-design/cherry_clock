@@ -1,6 +1,6 @@
 # Cherry-Clock
 
-This is my version of the Flutter Clock Challenge.
+This is my version of the clock for the Flutter Clock Challenge.
 
 https://flutter.dev/clock
 
