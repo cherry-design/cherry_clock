@@ -1,10 +1,8 @@
-# cherry_clock
+# Cherry-Clock
 
 This is my version of the Flutter Clock Challenge.
 
 https://flutter.dev/clock
-
-A Flutter project.
 
 Light Theme
 
