@@ -6,7 +6,6 @@ import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/semantics.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_clock_helper/model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -91,13 +90,16 @@ class _CherryClockState extends State<CherryClock> {
             // Clock face, hour and minute hands, text
             primaryColor: Colors.black,
             // Weather conditions, second hand, day/night mode icon
-            accentColor: Colors.red,
+            colorScheme:
+                Theme.of(context).colorScheme.copyWith(secondary: Colors.red),
           )
         : Theme.of(context).copyWith(
             backgroundColor: Colors.black,
             highlightColor: Colors.white10,
             primaryColor: Colors.white,
-            accentColor: Colors.yellow,
+            colorScheme: Theme.of(context)
+                .colorScheme
+                .copyWith(secondary: Colors.yellow),
           );
 
     return Container(
@@ -142,7 +144,7 @@ class _CherryClockState extends State<CherryClock> {
     return Icon(
       icon,
       semanticLabel: semantic,
-      color: theme.accentColor,
+      color: theme.colorScheme.secondary,
       size: 60,
     );
   }
@@ -156,7 +158,7 @@ class _CherryClockState extends State<CherryClock> {
           widget.model.weatherString,
           semanticsLabel: "Weather is ${widget.model.weatherString}",
           style: TextStyle(
-            color: theme.accentColor,
+            color: theme.colorScheme.secondary,
             fontSize: 24,
             fontFamily: "Roboto",
           ),
@@ -210,7 +212,7 @@ class _CherryClockState extends State<CherryClock> {
               ClockFace(color: theme.primaryColor),
               _clockDate(theme.primaryColor),
               HandSecond(
-                color: theme.accentColor,
+                color: theme.colorScheme.secondary,
                 angleRadians: _dateTime.second * radiansPerTick,
               ),
               HandMinute(

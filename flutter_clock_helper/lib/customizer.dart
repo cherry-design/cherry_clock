@@ -194,7 +194,7 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
       themeMode: _themeMode,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        resizeToAvoidBottomPadding: false,
+        resizeToAvoidBottomInset: false,
         endDrawer: _configDrawer(context),
         body: SafeArea(
           child: GestureDetector(
